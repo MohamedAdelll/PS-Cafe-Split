@@ -1,0 +1,15 @@
+services:
+  cafe:
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-3001}:${PORT:-3001}"
+    environment:
+      NODE_ENV: production
+    volumes:
+      - cafe-data:/app/data
+
+volumes:
+  cafe-data:
